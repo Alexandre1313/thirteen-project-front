@@ -1,21 +1,18 @@
-import { Inter } from 'next/font/google'
-import { AuthContext } from "@/context/AuthContext";
+"use client";
+import { AuthContext, AuthProvider } from "@/context/AuthContext";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import styles from "../styles/divLogin.module.css";
 
-
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
-  const { register, handleSubmit } = useForm();
+const PageLogin = () => {
+    const { register, handleSubmit } = useForm();
     const { SigIn } = useContext(AuthContext);
 
     async function handleSigIn(data: any) {
         await SigIn(data);
     }
 
-    return (
+    return (                
         <div
             className={`flex items-center justify-center h-[90vh] bg-[url('/images/clockBG.jpg')]
          bg-no-repeat bg-cover bg-top ${styles.divLogin}`}
@@ -71,7 +68,8 @@ export default function Home() {
                     </button>
                 </div>
             </form>
-        </div>
-    );
+        </div>              
+    )
 }
-  
+
+export default PageLogin

@@ -1,0 +1,7 @@
+/* styles.css */
+
+.custom_focus:focus {
+  /* Suas propriedades de estilo aqui */
+  outline: 0.000em solid #333333;
+  box-shadow: 0 0 2px #333333;
+}
